@@ -1,0 +1,17 @@
+{
+  "name": "sso-proxy",
+  "version": "0.0.0",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240129.0",
+    "@tsndr/cloudflare-worker-router": "^3.2.4",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.2",
+    "wrangler": "3.26.0"
+  },
+  "private": true,
+  "scripts": {
+    "start": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "vitest"
+  }
+}

@@ -1,0 +1,19 @@
+name: Deploy
+on: [ push, pull_request ]
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/master') }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+      - run: echo "$WRANGLER_TOML" >wrangler.toml
+        env:
+          WRANGLER_TOML: ${{ vars.WRANGLER_TOML }}
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

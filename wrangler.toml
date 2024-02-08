@@ -1,0 +1,12 @@
+name = "sso-proxy"
+main = "src/index.ts"
+compatibility_date = "2024-02-08"
+
+[vars]
+SSO_PROVIDER = "google"
+SSO_REDIRECT_URI = "https://<your_worker_domain>/callback"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sso-proxy"
+database_id = ""
