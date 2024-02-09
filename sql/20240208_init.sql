@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS clients
     client_id       TEXT PRIMARY KEY NOT NULL,
     client_secret   TEXT NOT NULL,
     redirect_uri    TEXT NOT NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS users
 (
@@ -12,4 +12,4 @@ CREATE TABLE IF NOT EXISTS users
     email       TEXT,
     name        TEXT,
     picture     TEXT
-)
+);
